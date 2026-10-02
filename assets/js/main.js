@@ -96,6 +96,11 @@
     'footer.follow': 'Follow us', 'footer.app': 'App', 'footer.news': 'Stay informed', 'footer.newsLead': 'Get our latest news.',
     'footer.emailLabel': 'Your email', 'footer.rights': 'All rights reserved.',
     'footer.terms': 'Terms of use', 'footer.privacy': 'Privacy policy',
+    'wa.title': 'Join the official WhatsApp channel',
+    'wa.lead': 'Official announcements, app news and mining tips, straight to WhatsApp.',
+    'wa.join': 'Join the channel', 'wa.later': 'Later',
+    'wa.modalTitle': 'Your download has started',
+    'wa.modalLead': 'Meanwhile, join the official WhatsApp channel to follow Wari Network announcements.',
   };
   var MESSAGES = {
     fr: { ok: 'Merci, vous êtes inscrit.', invalid: 'Saisissez une adresse e-mail valide.', error: 'Service indisponible. Réessayez plus tard.', mb: 'Mo' },
@@ -230,12 +235,13 @@
      Contact, réseaux sociaux et lettre d'information (selon config.js)
   ------------------------------------------------------------------ */
   var SOCIAL_ICONS = {
+    whatsapp: '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>',
     telegram: '<path d="M21.4 4.1 2.8 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.5c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.4c.9.5 1.5.2 1.7-.8l3.1-14.5c.3-1.3-.5-1.8-1.3-1.5zM9.4 14.6l-.3 3.8-1.4-4.5 10.2-6.4c.5-.3.9-.1.5.3z"/>',
     facebook: '<path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/>',
     x: '<path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.3l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.6z"/>',
     youtube: '<path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1c.4-1.2.4-3.8.4-3.8s0-2.6-.4-3.8zM10 15V9l5.2 3z"/>',
   };
-  var SOCIAL_NAMES = { telegram: 'Telegram', facebook: 'Facebook', x: 'X', youtube: 'YouTube' };
+  var SOCIAL_NAMES = { whatsapp: 'WhatsApp', telegram: 'Telegram', facebook: 'Facebook', x: 'X', youtube: 'YouTube' };
 
   function initConfig() {
     var email = (CONFIG.contactEmail || '').trim();
@@ -245,7 +251,8 @@
       document.querySelectorAll('.js-contact-fallback').forEach(function (el) { el.hidden = true; });
     }
 
-    var social = CONFIG.social || {};
+    var social = Object.assign({}, CONFIG.social || {}, { whatsapp: CONFIG.whatsappChannel || '' });
+    initWhatsApp((CONFIG.whatsappChannel || '').trim());
     var container = document.querySelector('.js-socials');
     var count = 0;
     Object.keys(SOCIAL_ICONS).forEach(function (name) {
@@ -295,6 +302,29 @@
       }).catch(function () {
         status.textContent = MESSAGES[currentLang].error;
         status.classList.add('err');
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     Chaîne WhatsApp : bloc, bouton flottant et proposition après un téléchargement
+  ------------------------------------------------------------------ */
+  function initWhatsApp(url) {
+    if (!/^https:\/\/(www\.)?whatsapp\.com\//.test(url)) return;
+    document.querySelectorAll('.js-whatsapp-link').forEach(function (a) { a.href = url; a.hidden = false; });
+    document.querySelectorAll('.js-whatsapp-block').forEach(function (el) { el.hidden = false; });
+
+    var modal = document.getElementById('wa-modal');
+    if (!modal) return;
+    function close() { modal.hidden = true; }
+    modal.querySelectorAll('.js-wa-close').forEach(function (el) { el.addEventListener('click', close); });
+    modal.addEventListener('click', function (event) { if (event.target === modal) close(); });
+    document.addEventListener('keydown', function (event) { if (event.key === 'Escape') close(); });
+    document.querySelectorAll('.js-download').forEach(function (a) {
+      a.addEventListener('click', function () {
+        // Le téléchargement suit son cours ; la proposition n'apparaît qu'une fois par visite.
+        try { if (window.sessionStorage.getItem('wari-wa-offered')) return; window.sessionStorage.setItem('wari-wa-offered', '1'); } catch (e) { /* stockage indisponible */ }
+        setTimeout(function () { modal.hidden = false; }, 700);
       });
     });
   }

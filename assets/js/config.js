@@ -8,6 +8,10 @@ window.WARI_CONFIG = {
   // E-mail affiché dans « Vous avez d'autres questions ? ». Exemple : 'contact@votre-domaine.com'
   contactEmail: '',
 
+  // Chaîne WhatsApp officielle (bloc « Communauté », bouton flottant, proposition après téléchargement).
+  // Exemple : 'https://whatsapp.com/channel/0029Va...'
+  whatsappChannel: 'https://whatsapp.com/channel/0029VbDmPPeD38CKr9Jmft3Y',
+
   // Liens des réseaux sociaux officiels (laisser vide pour masquer).
   social: {
     telegram: '',

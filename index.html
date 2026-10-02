@@ -17,7 +17,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Poppins:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Orbitron:wght@600;800&family=Poppins:wght@500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -42,6 +42,10 @@
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
   <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14"/><path d="M21 3 14.5 21l-4.5-7-7-4.5z"/></symbol>
+  <symbol id="i-neural" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/><circle cx="12" cy="10" r="1.2"/><circle cx="10" cy="14" r="1.2"/><circle cx="14" cy="14" r="1.2"/><path d="M11.4 11l-.8 2M12.6 11l.8 2M11.2 14h1.6"/></symbol>
+  <symbol id="i-chain" viewBox="0 0 24 24"><path d="M7.5 2.8 11.6 5.1v4.6L7.5 12 3.4 9.7V5.1z"/><path d="M3.4 5.1 7.5 7.4l4.1-2.3M7.5 7.4V12"/><path d="M16.5 12 20.6 14.3v4.6L16.5 21.2l-4.1-2.3v-4.6z"/><path d="M12.4 14.3l4.1 2.3 4.1-2.3M16.5 16.6v4.6"/><path d="M11.6 9.7l1.6 1.2M10.8 11.2l1.6 1.2" stroke-dasharray="1.2 1.4"/></symbol>
+  <symbol id="i-pickaxe" viewBox="0 0 24 24"><path d="M13.8 8.2 3.6 18.4a1.6 1.6 0 0 0 2.3 2.3L16.1 10.5"/><path d="M7.2 5.2c3.9-2.6 8.8-2.5 12.1.8s3.4 8.2.8 12.1c-.8-3.6-2.5-6.5-4.9-8.4S10.8 6 7.2 5.2z"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3z"/><path d="M21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></symbol>
 </svg>
 
@@ -79,8 +83,14 @@
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-copy">
-          <span class="chip" data-i18n="hero.chip">IA × Blockchain × Mining</span>
           <h1 data-i18n-html="hero.title">L’Intelligence Artificielle <span class="accent">au service du minage</span></h1>
+          <ul class="pillars" aria-label="IA, Blockchain, Mining">
+            <li class="pillar"><span class="pillar-icon"><svg class="icon"><use href="#i-neural"/></svg></span><span class="pillar-label">IA</span></li>
+            <li class="pillar-link" aria-hidden="true"></li>
+            <li class="pillar"><span class="pillar-icon"><svg class="icon"><use href="#i-chain"/></svg></span><span class="pillar-label">Blockchain</span></li>
+            <li class="pillar-link" aria-hidden="true"></li>
+            <li class="pillar"><span class="pillar-icon"><svg class="icon"><use href="#i-pickaxe"/></svg></span><span class="pillar-label">Mining</span></li>
+          </ul>
           <p class="hero-lead" data-i18n="hero.lead">Wari Network met l’intelligence artificielle au service d’un minage simple et accessible à tous : une session de 7 heures depuis votre téléphone Android, sans ressource lourde consommée.</p>
           <div class="hero-actions">
             <a class="btn btn-primary js-download" href="https://github.com/gobifinancement-ui/wari/releases/latest/download/wari-network.apk">
@@ -292,6 +302,20 @@
     </div>
   </section>
 
+  <!-- Communaute WhatsApp (affichee si le lien est renseigne dans config.js) -->
+  <section class="section js-whatsapp-block" id="communaute" style="padding-top:0" hidden>
+    <div class="wrap">
+      <div class="community">
+        <span class="wa-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg></span>
+        <div class="community-copy">
+          <h2 data-i18n="wa.title">Rejoignez la chaîne WhatsApp officielle</h2>
+          <p data-i18n="wa.lead">Annonces officielles, nouveautés de l’application et conseils de minage, directement sur WhatsApp.</p>
+        </div>
+        <a class="btn btn-whatsapp js-whatsapp-link" href="#" target="_blank" rel="noopener"><svg class="icon"><use href="#i-whatsapp"/></svg><span data-i18n="wa.join">Rejoindre la chaîne</span></a>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="section" id="faq" style="padding-top:0">
     <div class="wrap">
@@ -401,6 +425,20 @@
     </div>
   </div>
 </footer>
+
+<a class="wa-float js-whatsapp-link" href="#" target="_blank" rel="noopener" aria-label="Chaîne WhatsApp Wari Network" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+
+<div class="wa-modal" id="wa-modal" role="dialog" aria-modal="true" aria-labelledby="wa-modal-title" hidden>
+  <div class="wa-modal-card">
+    <span class="wa-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg></span>
+    <h3 id="wa-modal-title" data-i18n="wa.modalTitle">Le téléchargement a commencé</h3>
+    <p data-i18n="wa.modalLead">Pendant ce temps, rejoignez la chaîne WhatsApp officielle pour suivre les annonces de Wari Network.</p>
+    <div class="wa-modal-actions">
+      <a class="btn btn-whatsapp js-whatsapp-link js-wa-close" href="#" target="_blank" rel="noopener"><svg class="icon"><use href="#i-whatsapp"/></svg><span data-i18n="wa.join">Rejoindre la chaîne</span></a>
+      <button class="btn btn-ghost js-wa-close" type="button" data-i18n="wa.later">Plus tard</button>
+    </div>
+  </div>
+</div>
 
 <script src="assets/js/config.js"></script>
 <script src="assets/js/landmask.js"></script>
