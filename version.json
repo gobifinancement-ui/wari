@@ -1,23 +1,21 @@
 {
     "app":  "Wari Network",
     "android":  {
-                    "version_name":  "1.0.2",
-                    "build_number":  3,
-                    "apk_url":  "https://github.com/gobifinancement-ui/wari/releases/download/v1.0.2/wari-network-1.0.2.apk",
-                    "sha256":  "e8fc037e151324797375132b4451b1a0826439ec7e32e1fa1065aa7b6f12614a",
-                    "size_bytes":  19827339,
+                    "version_name":  "1.0.3",
+                    "build_number":  4,
+                    "apk_url":  "https://github.com/gobifinancement-ui/wari/releases/download/v1.0.3/wari-network-1.0.3.apk",
+                    "sha256":  "ddac0fb0c301c2498d6c887a436efa3132c322dece634939a5422f8aeb36ce82",
+                    "size_bytes":  20146615,
                     "released_at":  "2026-10-03",
                     "min_supported_build":  1,
                     "notes":  {
                                   "fr":  [
-                                             "Application deux fois plus légère à télécharger.",
-                                             "Cadeau animé après l\u0027inscription et partage de votre code de parrainage en un geste.",
-                                             "Le livre blanc s\u0027ouvre directement depuis le site officiel."
+                                             "Rappel quand votre session de minage est terminée, même application fermée.",
+                                             "Activation des notifications proposée au premier minage."
                                          ],
                                   "en":  [
-                                             "App now half as heavy to download.",
-                                             "Animated gift after sign-up and one-tap sharing of your referral code.",
-                                             "The whitepaper opens directly from the official website."
+                                             "Reminder when your mining session ends, even with the app closed.",
+                                             "Notifications can be turned on at your first mining session."
                                          ]
                               }
                 }
