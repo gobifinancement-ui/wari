@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wari Network</title>
+<meta name="description" content="Wari Network : l'application Android de minage assisté par l'IA. Sessions de 7 heures, boosts jusqu'à 5 WARI, 195 pays et 10 langues. Téléchargez l'APK officiel.">
+<meta name="theme-color" content="#0b0908">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wari Network : l'IA au service du minage">
+<meta property="og:description" content="Téléchargez l'application officielle Wari Network pour Android et commencez à miner des WARI.">
+<meta property="og:image" content="assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Poppins:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Pictogrammes réutilisés dans toute la page -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5.5 3.5-5.5 3.5z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="6.5" rx="6" ry="3"/><path d="M3 6.5v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/><path d="M3 11.5v5c0 1.66 2.69 3 6 3 .7 0 1.37-.06 2-.17"/><circle cx="17.5" cy="16.5" r="4"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20v-7M10 20V9M15 20v-5M20 20V4"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18.5" r="2.5"/><circle cx="19" cy="18.5" r="2.5"/><path d="M12 7.5v4.5M10.7 13.4 6.6 16.6M13.3 13.4l4.1 3.2"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 20h18"/><path d="m5 16 4.5-5 3.5 3 6-7"/><path d="M15 7h4v4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v9h14v-9"/><path d="M12 8c-1.5-3.5-5.5-4.5-5.5-2S9 8 12 8zM12 8c1.5-3.5 5.5-4.5 5.5-2S15 8 12 8z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14"/><path d="M21 3 14.5 21l-4.5-7-7-4.5z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3z"/><path d="M21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></symbol>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#accueil" aria-label="Wari Network, accueil">
+      <img src="assets/img/logo-128.webp" width="40" height="40" alt="">
+      <span>Wari Network</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#accueil" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="#a-propos" data-i18n="nav.about">À propos</a></li>
+      <li><a href="#fonctionnalites" data-i18n="nav.features">Fonctionnalités</a></li>
+      <li><a href="#avantages" data-i18n="nav.benefits">Avantages</a></li>
+      <li><a href="#feuille-de-route" data-i18n="nav.roadmap">Feuille de route</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Langue">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm btn-download-nav js-download" href="downloads/wari-network.apk">
+        <svg class="icon"><use href="#i-download"/></svg><span data-i18n="nav.download">Télécharger l'app</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Héros -->
+  <section class="hero" id="accueil">
+    <div class="hero-bg" aria-hidden="true"><canvas id="hero-canvas"></canvas></div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="chip" data-i18n="hero.chip">IA × Blockchain × Mining</span>
+          <h1 data-i18n-html="hero.title">L’Intelligence Artificielle <span class="accent">au service du minage</span></h1>
+          <p class="hero-lead" data-i18n="hero.lead">Wari Network met l’intelligence artificielle au service d’un minage simple et accessible à tous : une session de 7 heures depuis votre téléphone Android, sans ressource lourde consommée.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary js-download" href="downloads/wari-network.apk">
+              <svg class="icon"><use href="#i-download"/></svg><span data-i18n="hero.download">Télécharger l’application</span>
+            </a>
+            <a class="btn btn-ghost" href="#a-propos">
+              <svg class="icon"><use href="#i-play"/></svg><span data-i18n="hero.more">En savoir plus</span>
+            </a>
+          </div>
+          <ul class="hero-proof">
+            <li><svg class="icon"><use href="#i-check"/></svg><span data-i18n="hero.proof1">Gratuit</span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span data-i18n="hero.proof2">Facile à utiliser</span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span data-i18n="hero.proof3">Accessible à tous</span></li>
+          </ul>
+          <p class="release-line"><span data-i18n="hero.release">Android 7.0 ou plus récent</span> · <span data-i18n="common.version">Version</span> <span class="js-version">1.0.0</span></p>
+        </div>
+
+        <div class="stage" aria-hidden="true">
+          <div class="stage-halo"></div>
+          <div class="stage-ring r2"></div>
+          <div class="stage-ring r1"></div>
+          <div class="pedestal">
+            <div class="pedestal-glow"></div>
+            <div class="pedestal-top"></div>
+            <div class="pedestal-body"><strong>WARI NETWORK</strong><small>POWERED BY AI</small></div>
+          </div>
+          <picture class="stage-logo">
+            <source srcset="assets/img/logo-512.webp" type="image/webp">
+            <img src="assets/img/logo-512.png" width="512" height="512" alt="">
+          </picture>
+          <div class="float-card fc-ai"><span class="icon-tile"><svg class="icon"><use href="#i-cpu"/></svg></span><div><strong data-i18n="stage.ai">Boosts IA</strong><span data-i18n="stage.aiText">Jusqu’à 5 WARI par session</span></div></div>
+          <div class="float-card fc-perf"><span class="icon-tile"><svg class="icon"><use href="#i-chart"/></svg></span><div><strong data-i18n="stage.perf">7 heures</strong><span data-i18n="stage.perfText">par session de minage</span></div></div>
+          <div class="float-card fc-secure"><span class="icon-tile"><svg class="icon"><use href="#i-shield"/></svg></span><div><strong data-i18n="stage.secure">Réseau sécurisé</strong><span data-i18n="stage.secureText">Validé côté serveur</span></div></div>
+          <div class="float-card fc-world"><span class="icon-tile"><svg class="icon"><use href="#i-globe"/></svg></span><div><strong data-i18n="stage.world">Accès mondial</strong><span data-i18n="stage.worldText">195 pays, 10 langues</span></div></div>
+        </div>
+      </div>
+
+      <div class="facts">
+        <dl class="facts-grid">
+          <div class="fact"><span class="icon-tile"><svg class="icon"><use href="#i-globe"/></svg></span><div><dt class="sr-only" data-i18n="facts.countriesLabel">Pays</dt><dd style="margin:0"><b>195</b><span data-i18n="facts.countries">pays pris en charge</span></dd></div></div>
+          <div class="fact"><span class="icon-tile"><svg class="icon"><use href="#i-users"/></svg></span><div><dt class="sr-only" data-i18n="facts.languagesLabel">Langues</dt><dd style="margin:0"><b>10</b><span data-i18n="facts.languages">langues dans l’application</span></dd></div></div>
+          <div class="fact"><span class="icon-tile"><svg class="icon"><use href="#i-bolt"/></svg></span><div><dt class="sr-only" data-i18n="facts.sessionLabel">Session</dt><dd style="margin:0"><b>7 h</b><span data-i18n="facts.session">par session de minage</span></dd></div></div>
+          <div class="fact"><span class="icon-tile"><svg class="icon"><use href="#i-coins"/></svg></span><div><dt class="sr-only" data-i18n="facts.supplyLabel">Offre</dt><dd style="margin:0"><b data-i18n="facts.supplyValue">1 milliard</b><span data-i18n="facts.supply">de WARI : offre totale</span></dd></div></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="section" id="a-propos">
+    <div class="wrap split">
+      <div class="globe-wrap" aria-hidden="true"><canvas id="globe-canvas"></canvas></div>
+      <div class="split-copy">
+        <span class="chip" data-i18n="about.chip">Une vision globale</span>
+        <h2 data-i18n="about.title">Un minage intelligent et sans frontières</h2>
+        <p data-i18n="about.lead">Wari Network démocratise l’accès au minage grâce à l’intelligence artificielle. Où que vous soyez, vous minez depuis votre téléphone, avec un historique visible de chaque mouvement de valeur.</p>
+        <div class="feature-grid">
+          <div class="feature"><span class="icon-tile"><svg class="icon"><use href="#i-cpu"/></svg></span><div><h3 data-i18n="about.f1">Technologie IA</h3><p data-i18n="about.f1t">10 niveaux de boost, de 3,50 à 5,00 WARI par session.</p></div></div>
+          <div class="feature"><span class="icon-tile"><svg class="icon"><use href="#i-shield"/></svg></span><div><h3 data-i18n="about.f2">Sécurisé et transparent</h3><p data-i18n="about.f2t">Chaque gain, bonus et retrait est inscrit dans votre historique.</p></div></div>
+          <div class="feature"><span class="icon-tile"><svg class="icon"><use href="#i-globe"/></svg></span><div><h3 data-i18n="about.f3">Accessible à tous</h3><p data-i18n="about.f3t">195 pays et 10 langues : français, anglais, espagnol, portugais, allemand, russe, chinois, hindi, japonais, vietnamien.</p></div></div>
+          <div class="feature"><span class="icon-tile"><svg class="icon"><use href="#i-bolt"/></svg></span><div><h3 data-i18n="about.f4">Léger pour votre téléphone</h3><p data-i18n="about.f4t">Le minage ne consomme pas de ressources lourdes sur l’appareil.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comment ça marche -->
+  <section class="section" id="fonctionnalites" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="chip" data-i18n="how.chip">Processus simple</span>
+        <h2 data-i18n="how.title">Comment ça marche ?</h2>
+        <p data-i18n="how.lead">Commencez à miner en quatre étapes.</p>
+      </div>
+      <ol class="steps">
+        <li class="step"><span class="step-num">1</span><svg class="icon"><use href="#i-download"/></svg><h3 data-i18n="how.s1">Téléchargez l’app</h3><p data-i18n="how.s1t">Installez l’APK officiel Wari Network depuis ce site.</p></li>
+        <li class="step"><span class="step-num">2</span><svg class="icon"><use href="#i-user"/></svg><h3 data-i18n="how.s2">Créez votre compte</h3><p data-i18n="how.s2t">Choisissez votre pays : l’indicatif téléphonique s’ajoute tout seul. Code de parrainage facultatif.</p></li>
+        <li class="step"><span class="step-num">3</span><svg class="icon"><use href="#i-cpu"/></svg><h3 data-i18n="how.s3">Activez le minage</h3><p data-i18n="how.s3t">Lancez une session de 7 heures et débloquez des boosts pour gagner plus.</p></li>
+        <li class="step"><span class="step-num">4</span><svg class="icon"><use href="#i-coins"/></svg><h3 data-i18n="how.s4">Gagnez des WARI</h3><p data-i18n="how.s4t">Réclamez vos WARI en fin de session et suivez-les dans votre historique.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Nouvelle génération -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap split">
+      <div class="split-copy">
+        <span class="chip" data-i18n="gen.chip">Pourquoi Wari Network ?</span>
+        <h2 data-i18n="gen.title">Une nouvelle génération de minage</h2>
+        <p data-i18n="gen.lead">Wari Network associe l’intelligence artificielle, des règles économiques claires et les réseaux blockchain utilisés pour les retraits USDT (BEP20, TRC20, ERC20).</p>
+        <ul class="gen-list">
+          <li><span class="icon-tile solid"><svg class="icon"><use href="#i-cpu"/></svg></span><div><h3 data-i18n="gen.f1">Minage assisté par IA</h3><p data-i18n="gen.f1t">Des sessions plafonnées à 5 WARI pour une émission maîtrisée.</p></div></li>
+          <li><span class="icon-tile solid"><svg class="icon"><use href="#i-phone"/></svg></span><div><h3 data-i18n="gen.f2">Interface simple et moderne</h3><p data-i18n="gen.f2t">Une application fluide, pensée pour tous les téléphones Android.</p></div></li>
+          <li><span class="icon-tile solid"><svg class="icon"><use href="#i-network"/></svg></span><div><h3 data-i18n="gen.f3">Communauté mondiale</h3><p data-i18n="gen.f3t">Parrainez vos proches : 10 WARI pour vous, 5 WARI de bienvenue pour eux.</p></div></li>
+          <li><span class="icon-tile solid"><svg class="icon"><use href="#i-trend"/></svg></span><div><h3 data-i18n="gen.f4">Évolutif</h3><p data-i18n="gen.f4t">Chaque nouvelle version s’installe directement depuis l’application.</p></div></li>
+        </ul>
+      </div>
+      <div class="stack-scene" aria-hidden="true">
+        <div class="stack-base"></div>
+        <div class="stack">
+          <div class="slab s1"><div class="face top"></div><div class="face bottom"></div><div class="face back"></div><div class="face left"></div><div class="face front"><span>IA</span></div><div class="face right"><span>IA</span></div></div>
+          <div class="slab s2"><div class="face top"></div><div class="face bottom"></div><div class="face back"></div><div class="face left"></div><div class="face front"><span>BLOCKCHAIN</span></div><div class="face right"><span>BLOCKCHAIN</span></div></div>
+          <div class="slab s3"><div class="face top"></div><div class="face bottom"></div><div class="face back"></div><div class="face left"></div><div class="face front"><span>MINING</span></div><div class="face right"><span>MINING</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avantages : règles réelles de l'application -->
+  <section class="section" id="avantages" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="chip" data-i18n="rules.chip">Avantages</span>
+        <h2 data-i18n="rules.title">Des règles claires, appliquées par le serveur</h2>
+        <p data-i18n="rules.lead">Chaque récompense est calculée côté serveur et enregistrée dans l’historique de votre compte.</p>
+      </div>
+      <dl class="rules">
+        <div class="rule"><dt data-i18n="rules.r1">Session de minage</dt><dd><span class="value">3,50 → 5,00<small>WARI</small></span></dd><dd class="detail" data-i18n="rules.r1t">Toutes les 7 heures, selon votre niveau de boost (1 à 10).</dd></div>
+        <div class="rule"><dt data-i18n="rules.r2">Bonus de minage</dt><dd><span class="value">10<small>USDT</small></span></dd><dd class="detail" data-i18n="rules.r2t">Pour chaque tranche de 100 WARI obtenus par minage.</dd></div>
+        <div class="rule"><dt data-i18n="rules.r3">Parrainage</dt><dd><span class="value">10<small>WARI</small></span></dd><dd class="detail" data-i18n="rules.r3t">Pour vous, à chaque ami inscrit avec votre code.</dd></div>
+        <div class="rule"><dt data-i18n="rules.r4">Bonus de bienvenue</dt><dd><span class="value">5<small>WARI</small></span></dd><dd class="detail" data-i18n="rules.r4t">À l’inscription avec un code de parrainage valide. Sans code, pas de bonus.</dd></div>
+        <div class="rule"><dt data-i18n="rules.r5">Staking</dt><dd><span class="value">20 %<small data-i18n="rules.perYear">/ an</small></span></dd><dd class="detail" data-i18n="rules.r5t">À partir de 100 WARI, blocage de 2 ans.</dd></div>
+        <div class="rule"><dt data-i18n="rules.r6">Retrait</dt><dd><span class="value">10<small>USDT min.</small></span></dd><dd class="detail" data-i18n="rules.r6t">Avec un KYC approuvé et un score de confiance d’au moins 50.</dd></div>
+      </dl>
+      <p class="rules-note" data-i18n="rules.note">Les offres partenaires ajoutent des WARI supplémentaires, une seule fois par offre et par compte.</p>
+    </div>
+  </section>
+
+  <!-- Feuille de route + token -->
+  <section class="section" id="feuille-de-route" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="chip" data-i18n="road.chip">Feuille de route</span>
+        <h2 data-i18n="road.title">De 2026 à 2031</h2>
+        <p data-i18n="road.lead">Les grandes étapes prévues par le livre blanc officiel, version 1.1.</p>
+      </div>
+      <ol class="roadmap">
+        <li class="milestone now"><span class="year">2026</span><span class="tag" data-i18n="road.now">En cours</span><p data-i18n="road.y2026">Lancement officiel, premiers membres, parrainage et récompenses.</p></li>
+        <li class="milestone"><span class="year">2027</span><p data-i18n="road.y2027">Objectif de 100 000 utilisateurs actifs et ouverture progressive des retraits USDT pour les comptes vérifiés.</p></li>
+        <li class="milestone"><span class="year">2028</span><p data-i18n="road.y2028">Objectif du million d’utilisateurs, préparation du contrat intelligent et premières intégrations blockchain.</p></li>
+        <li class="milestone"><span class="year">2029</span><p data-i18n="road.y2029">Cotation progressive, portefeuille numérique Wari AI et gouvernance communautaire.</p></li>
+        <li class="milestone"><span class="year">2030</span><p data-i18n="road.y2030">Carte de paiement Wari AI, partenariats marchands et objectif de 5 millions d’utilisateurs.</p></li>
+        <li class="milestone"><span class="year">2031</span><p data-i18n="road.y2031">Écosystème mature, objectif de 10 millions d’utilisateurs et gouvernance davantage décentralisée.</p></li>
+      </ol>
+
+      <div class="token">
+        <div class="token-intro">
+          <h3 data-i18n="token.title">Distribution du token WARI</h3>
+          <p class="supply">1 000 000 000<small data-i18n="token.supply">WARI : offre totale cible</small></p>
+          <p data-i18n="token.lead">La répartition place la communauté au centre du projet tout en assurant le développement et la stabilité de l’écosystème.</p>
+          <p class="disclaimer" data-i18n="token.disclaimer">Objectif fondateur : viser 5 USD par WARI si le projet atteint un million d’utilisateurs actifs avant le premier semestre 2028. Cet objectif dépend de l’adoption, de la réglementation et du marché ; il ne constitue ni une promesse de rendement ni une garantie de prix.</p>
+        </div>
+        <ul class="alloc" aria-label="Répartition de l'offre totale de WARI">
+          <li tabindex="0"><span class="pct">40 %</span><span class="label"><span data-i18n="token.a1">Participation communautaire et récompenses quotidiennes</span><em>400 M WARI</em></span><span class="track"><span class="bar" style="--v:100%"></span></span></li>
+          <li tabindex="0"><span class="pct">20 %</span><span class="label"><span data-i18n="token.a2">Staking et rendements</span><em>200 M WARI</em></span><span class="track"><span class="bar" style="--v:50%"></span></span></li>
+          <li tabindex="0"><span class="pct">20 %</span><span class="label"><span data-i18n="token.a3">Réserve stratégique et stabilisation</span><em>200 M WARI</em></span><span class="track"><span class="bar" style="--v:50%"></span></span></li>
+          <li tabindex="0"><span class="pct">10 %</span><span class="label"><span data-i18n="token.a4">Développement, marketing et partenariats</span><em>100 M WARI</em></span><span class="track"><span class="bar" style="--v:25%"></span></span></li>
+          <li tabindex="0"><span class="pct">10 %</span><span class="label"><span data-i18n="token.a5">Liquidité de marché et soutien à la cotation</span><em>100 M WARI</em></span><span class="track"><span class="bar" style="--v:25%"></span></span></li>
+        </ul>
+      </div>
+
+      <div class="paper">
+        <div class="paper-cover" aria-hidden="true"><img src="assets/img/logo-128.webp" width="128" height="128" alt=""></div>
+        <div>
+          <h3 data-i18n="paper.title">Livre blanc officiel</h3>
+          <p data-i18n="paper.lead">Vision, règles économiques, sécurité et feuille de route complète. Version 1.1, édition 2026, disponible en 10 langues.</p>
+          <div class="paper-langs" id="paper-langs">
+            <a href="docs/wari_whitepaper_fr.pdf" hreflang="fr" data-lang="fr" target="_blank" rel="noopener">Français</a>
+            <a href="docs/wari_whitepaper_en.pdf" hreflang="en" data-lang="en" target="_blank" rel="noopener">English</a>
+            <a href="docs/wari_whitepaper_es.pdf" hreflang="es" target="_blank" rel="noopener">Español</a>
+            <a href="docs/wari_whitepaper_pt.pdf" hreflang="pt" target="_blank" rel="noopener">Português</a>
+            <a href="docs/wari_whitepaper_de.pdf" hreflang="de" target="_blank" rel="noopener">Deutsch</a>
+            <a href="docs/wari_whitepaper_ru.pdf" hreflang="ru" target="_blank" rel="noopener">Русский</a>
+            <a href="docs/wari_whitepaper_zh.pdf" hreflang="zh" target="_blank" rel="noopener">简体中文</a>
+            <a href="docs/wari_whitepaper_hi.pdf" hreflang="hi" target="_blank" rel="noopener">हिन्दी</a>
+            <a href="docs/wari_whitepaper_ja.pdf" hreflang="ja" target="_blank" rel="noopener">日本語</a>
+            <a href="docs/wari_whitepaper_vi.pdf" hreflang="vi" target="_blank" rel="noopener">Tiếng Việt</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Téléchargement -->
+  <section class="section" id="telecharger" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <canvas id="cta-canvas" aria-hidden="true"></canvas>
+        <div class="cta-copy">
+          <span class="chip" data-i18n="cta.chip">Rejoignez-nous maintenant</span>
+          <h2 data-i18n="cta.title">Faites partie de la révolution</h2>
+          <p data-i18n="cta.lead">Téléchargez l’application Wari Network dès maintenant et commencez à miner avec l’intelligence artificielle.</p>
+          <a class="btn btn-primary js-download" href="downloads/wari-network.apk">
+            <svg class="icon"><use href="#i-download"/></svg><span data-i18n="cta.download">Télécharger l’application</span>
+          </a>
+          <p class="cta-meta"><span data-i18n="common.version">Version</span> <span class="js-version">1.0.0</span><span class="js-size"></span> · <span data-i18n="cta.android">Android 7.0 ou plus récent</span> · <span data-i18n="cta.free">Gratuit</span></p>
+        </div>
+        <picture class="cta-logo" aria-hidden="true">
+          <source srcset="assets/img/logo-256.webp" type="image/webp">
+          <img src="assets/img/logo-192.png" width="256" height="256" alt="">
+        </picture>
+      </div>
+      <ol class="install">
+        <li><strong data-i18n="install.s1">Téléchargez l’APK</strong><span data-i18n="install.s1t">Utilisez uniquement ce site officiel : l’application n’est pas distribuée sur le Play Store.</span></li>
+        <li><strong data-i18n="install.s2">Autorisez l’installation</strong><span data-i18n="install.s2t">Ouvrez le fichier, puis acceptez « Autoriser depuis cette source » si Android le demande.</span></li>
+        <li><strong data-i18n="install.s3">Restez à jour</strong><span data-i18n="install.s3t">Les nouvelles versions s’annoncent dans l’application et s’installent en un clic.</span></li>
+      </ol>
+      <p class="checksum js-checksum" hidden><span data-i18n="install.checksum">Empreinte SHA-256 du fichier :</span> <code class="js-sha"></code></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="chip">FAQ</span>
+        <h2 data-i18n="faq.title">Questions fréquentes</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary data-i18n="faq.q1">Wari Network est-il gratuit ?</summary>
+            <div class="answer"><p data-i18n="faq.a1">Oui. Le téléchargement, l’inscription et le minage sont gratuits. Les niveaux de boost se débloquent en regardant une publicité récompensée, confirmée par le serveur.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q2">Comment sont générés les gains ?</summary>
+            <div class="answer"><p data-i18n="faq.a2">Vous lancez une session de minage de 7 heures. Selon votre niveau de boost (1 à 10), elle rapporte de 3,50 à 5,00 WARI, que vous réclamez à la fin de la session. Le plafond absolu d’une session est de 5,00 WARI.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q3">Puis-je retirer mes WARI ?</summary>
+            <div class="answer"><p data-i18n="faq.a3">Les retraits se font en USDT. Chaque tranche de 100 WARI obtenus par minage crédite 10 USDT sur votre solde. Un retrait demande au moins 10 USDT, un KYC approuvé et un score de confiance d’au moins 50, sur les réseaux BEP20, TRC20 ou ERC20.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q4">L’application est-elle sécurisée ?</summary>
+            <div class="answer"><p data-i18n="faq.a4">Vos jetons de connexion sont conservés dans le stockage protégé du téléphone, les opérations financières sont traitées en transactions atomiques côté serveur, et les documents KYC sont stockés dans un espace privé consultable uniquement par l’administration autorisée.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q5">Le code de parrainage est-il obligatoire ?</summary>
+            <div class="answer"><p data-i18n="faq.a5">Non. Vous pouvez vous inscrire sans code. Avec un code valide, vous recevez 5 WARI de bienvenue et votre parrain reçoit 10 WARI. Sans code, aucun bonus d’inscription n’est attribué.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q6">Pourquoi l’application n’est-elle pas sur le Play Store ?</summary>
+            <div class="answer"><p data-i18n="faq.a6">Wari Network est distribué directement depuis ce site. L’application vérifie elle-même les nouvelles versions, télécharge la mise à jour et contrôle l’intégrité du fichier avant de lancer l’installation.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q7">Quelle est la valeur d’un WARI ?</summary>
+            <div class="answer"><p data-i18n="faq.a7">WARI est une unité numérique liée à la participation dans l’écosystème. L’objectif de 5 USD par WARI dépend de l’adoption réelle et des conditions de marché : ce n’est pas une garantie.</p></div>
+          </details>
+        </div>
+        <aside class="help">
+          <div class="help-text">
+            <h3 data-i18n="help.title">Vous avez d’autres questions ?</h3>
+            <p data-i18n="help.lead">Notre équipe est là pour vous aider.</p>
+            <p class="email js-contact-email" hidden></p>
+            <a class="btn btn-ghost js-contact" href="#" hidden><svg class="icon"><use href="#i-mail"/></svg><span data-i18n="help.cta">Nous contacter</span></a>
+            <p class="js-contact-fallback" data-i18n="help.fallback">Suivez les annonces officielles directement dans l’application.</p>
+          </div>
+          <span class="help-bubble" aria-hidden="true">?</span>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#accueil"><img src="assets/img/logo-128.webp" width="40" height="40" alt=""><span style="display:inline">Wari Network</span></a>
+        <p data-i18n="footer.tagline">L’IA au service du minage. Application officielle pour Android.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.links">Liens utiles</h4>
+        <ul>
+          <li><a href="#accueil" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="#a-propos" data-i18n="nav.about">À propos</a></li>
+          <li><a href="#fonctionnalites" data-i18n="nav.features">Fonctionnalités</a></li>
+          <li><a href="#avantages" data-i18n="nav.benefits">Avantages</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.resources">Ressources</h4>
+        <ul>
+          <li><a href="#feuille-de-route" data-i18n="nav.roadmap">Feuille de route</a></li>
+          <li><a href="docs/wari_whitepaper_fr.pdf" class="js-paper-link" target="_blank" rel="noopener" data-i18n="paper.short">Livre blanc</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="#telecharger" data-i18n="footer.install">Installer l’application</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-app">
+          <h4 data-i18n="footer.app" style="margin:0">Application</h4>
+          <a class="btn btn-primary btn-sm js-download" href="downloads/wari-network.apk"><svg class="icon"><use href="#i-download"/></svg><span data-i18n="nav.download">Télécharger l'app</span></a>
+          <p><span data-i18n="common.version">Version</span> <span class="js-version">1.0.0</span> · Android 7.0+</p>
+        </div>
+        <div class="js-social-block" hidden style="margin-top:22px">
+          <h4 data-i18n="footer.follow">Suivez-nous</h4>
+          <div class="socials js-socials"></div>
+        </div>
+        <form class="newsletter js-newsletter" hidden novalidate style="margin-top:20px">
+          <h4 data-i18n="footer.news">Restez informé</h4>
+          <p data-i18n="footer.newsLead">Recevez nos dernières actualités.</p>
+          <div class="newsletter-row">
+            <label class="sr-only" for="newsletter-email" data-i18n="footer.emailLabel">Votre e-mail</label>
+            <input id="newsletter-email" type="email" name="email" autocomplete="email" required placeholder="Votre e-mail" data-i18n-placeholder="footer.emailLabel">
+            <button type="submit" aria-label="S'inscrire"><svg class="icon"><use href="#i-send"/></svg></button>
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Wari Network. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
+      <nav aria-label="Informations légales">
+        <a href="conditions.html" data-i18n="footer.terms">Conditions d’utilisation</a>
+        <a href="confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/landmask.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

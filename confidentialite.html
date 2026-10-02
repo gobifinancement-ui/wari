@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Confidentialité Wari Network</title>
+<meta name="description" content="Politique de confidentialité de l'application et du site Wari Network.">
+<meta name="theme-color" content="#0b0908">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Poppins:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><img src="assets/img/logo-128.webp" width="40" height="40" alt=""><span>Wari Network</span></a>
+    <div class="nav-actions" style="margin-left:auto"><a class="btn btn-ghost btn-sm" href="index.html">Retour au site</a></div>
+  </div>
+</header>
+<main class="wrap">
+  <article class="legal">
+    <h1>Politique de confidentialité</h1>
+    <p class="updated">Dernière mise à jour : 2 octobre 2026</p>
+
+    <p>Cette politique décrit les données traitées par l’application Android Wari Network et par ce site, pourquoi elles le sont et comment exercer vos droits.</p>
+
+    <h2>Données collectées</h2>
+    <ul>
+      <li><strong>Compte</strong> : adresse e-mail, numéro de téléphone, pays, langue, mot de passe (stocké uniquement sous forme chiffrée irréversible) et pseudonyme public généré automatiquement (Wari-XXXXXX).</li>
+      <li><strong>Appareil</strong> : un identifiant technique de l’appareil, utilisé pour empêcher la création de plusieurs comptes sur un même téléphone, et le jeton de notification Firebase.</li>
+      <li><strong>Activité</strong> : sessions de minage, niveaux de boost, parrainages, participations aux offres partenaires, placements, soldes et historique des transactions.</li>
+      <li><strong>Vérification d’identité (KYC)</strong>, uniquement sur invitation : nom, prénom, date de naissance, type et pays du document, photos du document et selfie.</li>
+      <li><strong>Retraits</strong> : adresse de portefeuille et réseau choisis (BEP20, TRC20 ou ERC20).</li>
+      <li><strong>Site</strong> : l’adresse e-mail que vous saisissez dans « Restez informé ».</li>
+    </ul>
+
+    <h2>Utilisation des données</h2>
+    <ul>
+      <li>Créer et sécuriser votre compte, calculer et créditer vos récompenses.</li>
+      <li>Prévenir la fraude : comptes multiples, abus de parrainage, retraits non autorisés.</li>
+      <li>Vérifier votre identité avant un retrait et traiter vos demandes de retrait.</li>
+      <li>Vous envoyer les annonces officielles et, si vous l’avez demandé, notre lettre d’information.</li>
+    </ul>
+
+    <h2>Services tiers</h2>
+    <p>L’application utilise Google Firebase Cloud Messaging pour les notifications et Google AdMob pour les publicités récompensées qui débloquent les boosts. Ces services peuvent traiter des identifiants publicitaires et techniques selon leurs propres politiques. Nous ne vendons pas vos données personnelles.</p>
+
+    <h2>Conservation et sécurité</h2>
+    <p>Les jetons de connexion sont conservés dans le stockage protégé du téléphone. Les documents KYC sont enregistrés dans un espace privé du serveur, jamais exposé publiquement, et ne sont consultables que par l’administration autorisée. Les données de compte sont conservées tant que le compte est actif, puis supprimées ou anonymisées, sauf obligation légale de conservation.</p>
+
+    <h2>Vos droits</h2>
+    <p>Vous pouvez demander l’accès, la rectification ou la suppression de vos données, ainsi que vous désinscrire de la lettre d’information à tout moment. Écrivez-nous à <span class="js-contact-inline">l’adresse indiquée dans l’application</span>.</p>
+
+    <h2>Mineurs</h2>
+    <p>Wari Network est réservé aux personnes majeures. Nous ne collectons pas sciemment de données concernant des mineurs.</p>
+  </article>
+</main>
+<footer class="site-footer"><div class="wrap footer-bottom" style="margin-top:0;border-top:0;padding-top:0"><span>© 2026 Wari Network</span><nav><a href="conditions.html">Conditions d’utilisation</a><a href="index.html">Accueil</a></nav></div></footer>
+<script src="assets/js/config.js"></script>
+<script>
+  (function () {
+    var email = ((window.WARI_CONFIG || {}).contactEmail || '').trim();
+    if (!email) return;
+    document.querySelectorAll('.js-contact-inline').forEach(function (el) { el.textContent = email; });
+  })();
+</script>
+</body>
+</html>

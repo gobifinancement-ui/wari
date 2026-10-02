@@ -1,0 +1,13 @@
+{
+  "name": "Wari Network",
+  "short_name": "Wari",
+  "description": "L'IA au service du minage.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0908",
+  "theme_color": "#0b0908",
+  "icons": [
+    { "src": "assets/img/logo-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/img/logo-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
