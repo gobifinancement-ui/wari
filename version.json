@@ -1,21 +1,21 @@
 {
     "app":  "Wari Network",
     "android":  {
-                    "version_name":  "1.0.3",
-                    "build_number":  4,
-                    "apk_url":  "https://github.com/gobifinancement-ui/wari/releases/download/v1.0.3/wari-network-1.0.3.apk",
-                    "sha256":  "ddac0fb0c301c2498d6c887a436efa3132c322dece634939a5422f8aeb36ce82",
-                    "size_bytes":  20146615,
+                    "version_name":  "1.0.4",
+                    "build_number":  5,
+                    "apk_url":  "https://github.com/gobifinancement-ui/wari/releases/download/v1.0.4/wari-network-1.0.4.apk",
+                    "sha256":  "362a9d02fbc33d1e4b20f4ae6962def7d4051b2d33df0fb7e40e5a78432f7d7a",
+                    "size_bytes":  20151723,
                     "released_at":  "2026-10-03",
                     "min_supported_build":  1,
                     "notes":  {
                                   "fr":  [
-                                             "Rappel quand votre session de minage est terminée, même application fermée.",
-                                             "Activation des notifications proposée au premier minage."
+                                             "Toucher une notification ouvre directement l\u0027écran concerné : KYC, retraits, parrainage, missions ou minage.",
+                                             "Notifications pour l\u0027invitation et la décision KYC, vos retraits et vos nouveaux filleuls."
                                          ],
                                   "en":  [
-                                             "Reminder when your mining session ends, even with the app closed.",
-                                             "Notifications can be turned on at your first mining session."
+                                             "Tapping a notification now opens the right screen: KYC, withdrawals, referrals, missions or mining.",
+                                             "Notifications for KYC invitations and decisions, your withdrawals and new referrals."
                                          ]
                               }
                 }
